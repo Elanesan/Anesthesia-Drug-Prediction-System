@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./symbol.png" type="image/x-icon">
+    <title>ANESTHESIA DRUG PREDICTION</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="heading">
+            <h1>ANESTHESIA DRUG PREDICTION DURING SURGERY</h1>
+            
+            <h3>ARTIFICIAL INTELLIGENCE IN MEDICAL FIELD</h3>
+            <h3>GENERAL SURGERY</h3>
+        </div>
+        <div class="logo">
+            <img src="./symbol.png" alt="">
+        </div>
+        <div class="form">
+            <form id="mform" name="mform" action="">
+                <div class="row">
+                    <input type="text" id="name" autocomplete="on" required placeholder="PATIENT NAME">
+                    <input type="text" id="doctor_name" autocomplete="on" required placeholder="DOCTOR NAME">
+                    
+                </div>
+                <br>
+                <div class="row">
+                    
+                    <input type="text" id="surgery_type" autocomplete="on" required placeholder="SURGERY NAME">
+                        
+                    <input type="text" id="surgery_length" autocomplete="on" required placeholder="SURGERY LENGTH">
+                </div>
+                <br>
+                <div class="row">
+                    <input type="text" id="weight" autocomplete="on" required placeholder="PATIENT WEIGHT">
+                    <input type="text" id="age" autocomplete="on" required placeholder="PATIENT AGE">
+                    
+                </div>
+                <br>
+                <div class="row">
+                    <input type="text" id="allergies" autocomplete="on" required placeholder="ALLERGIES">
+                    <input type="text" id="medical_history" autocomplete="on" required placeholder="PATIENT MEDICAL HISTORY">
+                </div>
+                <br>
+                <div class="row">
+                    <input type="text" id="heart_beat" autocomplete="on" required placeholder="PATIENT HEART BEAT">
+                    <input type="text" id="current_medications" autocomplete="on" required placeholder="CURRENT MEDICATIONS">
+                </div>
+                <br>
+
+                <div class="row">
+                    <input type="text" autocomplete="on" id="blood_pressure" required placeholder="PATIENT BLOOD PRESSURE">
+                    <input type="text" autocomplete="on" id="respiration_rate" required placeholder="PATIENT RESPIRATION RATE"> 
+                </div>
+                <br>
+                <div class="row">
+                    <input type="text" autocomplete="on" id="oxygen_saturations" required placeholder="OXYGEN SATURATIONS">
+                    <input type="text" id="blood_group" autocomplete="on" required placeholder="BLOOD GROUP">
+
+                </div>
+                <br>
+                <div class="btn">
+                    <button type="submit" id="btn" >Predict</button>
+                    <button type="reset" onclick="clrin()" id="reset">Clear</button>
+                </div>
+            </form>
+        </div>
+        <br>
+        <div class="out">
+            <h2 class="o1" ></h3>
+            <div class="res" id="res">
+            <br>
+                
+            </div>
+        </div>
+        <br>
+       
+        <br>
+        <label id="cred"></label>
+        <div class="foot" >
+            <div class="std" >
+
+                <h4>ELANESAN K<br> Student</h4>
+                <h4>PRITHEEVE D<br> Student</h4>
+                <h4>DEO ALESTER S<br> Student</h4>
+                <h4>ARUN KUMAR S<br> Student</h4>
+                <h4>KAAVIYA R<br> Student</h4>
+                
+            
+            </div>
+            <p class="f" >STUDENTS DEPARTMENT OF ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING-KRCE-TRICHY</p>
+        </div>
+    </div>
+    <!-- <script>
+        
+        
+        var frm = document.getElementById("frm");
+        frm.addEventListener("submit",(event)=>{
+            event.preventDefault();
+            var out = document.getElementById('res');
+            out.innerHTML=`
+    <h2>DRUG NAME : Propofol</h2>
+    <h3>Dose : 2</h3>`;
+        })
+        function clrin(){
+        var dose=document.getElementById("res")
+            dose.innerHTML='';
+        }
+    </script> -->
+    <script>
+        
+        
+        var frm = document.getElementById("mform");
+        frm.addEventListener("submit",(event)=>{
+            event.preventDefault();
+            var age=document.forms['mform']['age'];
+            
+
+            var dose=document.getElementById("res");
+
+            var age = document.getElementById("age").value;
+            var weight = document.getElementById("weight").value;
+            
+            
+            weight = parseInt(weight)
+            var propfol=(weight*2)*0.10;
+            var vecuronium = (weight*0.1)*0.10;
+            var ketamine=(weight*2)*0.10;
+            var fentanyl=(weight*0.005)*0.10;
+            var succinyl=(weight*2)*0.10;
+            
+            let dose1=propfol.toFixed(3);
+            let dose2=vecuronium.toFixed(3);
+            let dose3=ketamine.toFixed(3);
+            let dose4=fentanyl.toFixed(3);
+            let dose5=succinyl.toFixed(3);
+            
+            var total=propfol+vecuronium+ketamine+fentanyl+succinyl;
+            let total_dose=total.toFixed(3);
+            
+            
+            dose.innerHTML=`<br>Propfol : ${dose1} ml <br> Vecuronium : ${dose2} ml<br> Ketamine : ${dose3} ml<br> Fentanyl : ${dose4} ml<br> Succinyl choline : ${dose5} ml <br> Total dose level : ${total_dose} ml`;
+
+            
+            
+
+            
+        })
+        function clrin(){
+        var dose=document.getElementById("res")
+            dose.innerHTML=' ';
+        }
+        function accepted(){
+            alert("Your response has been recorded by AI ANESTHEOLOGIST and pay 16,000 within tomorrow ");
+        }
+    </script>
+</body>
+</html>
