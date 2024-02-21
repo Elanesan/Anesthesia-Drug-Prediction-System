@@ -1,0 +1,40 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANESTHESIA DRUG PREDICTION</title>
+    <link rel="icon" href="{% static 'symbol.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <section>
+
+        <div>
+            {% if user.is_authenticated %}
+            <h1>{{ user.username }}</h1>
+            <a href="login" style="text-decoration: none; padding-right: 0%;">Log out</a>
+            
+           
+            
+            <h1 style="color: rgb(48, 14, 14);">HOSPITAL DASHBOARD</h1>
+        </div>
+        <p style="text-align: center;"><img src="{% static 'symbol.png' %}" alt="HOSPITAL"></p>
+        <div>
+            <br><br><br>
+            <p style="text-align: center;"><a href="{% static 'prediction.html' %}"><button style="width: 150px;">PREDICT NOW</button></a></p>
+            
+
+        </div>
+        {% else %}
+        <h1>ANESTHESIA DRUG PREDICTION DURING SURGERY</h1>
+        <a href="login"><button>LOGIN</button></a>
+        {% endif %}
+    </section>
+
+    
+</body>
+</html>

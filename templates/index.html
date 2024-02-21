@@ -1,0 +1,52 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANESTHESIA DRUG PREDICTION</title>
+    <link rel="icon" href="{% static 'symbol.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+
+</head>
+<body>
+    
+    <section class="body">
+        <div>
+            <h1 style="padding-top: 17%;">AI ANESTHESIOLOGIST</h1>
+        </div >
+        <section class="login">
+            <form method="POST">
+                {% csrf_token %}
+                <div>
+                    <p style="text-align: center;"><img src="{% static 'symbol.png' %}" alt="ANESTHESIA"></p>
+                </div>
+                <div>
+                    <input type="text" placeholder="USERNAME" required name="username">
+        
+                </div>
+                <br><br>
+                <div>
+                    <input type="password" placeholder="PASSWORD" required name="password">
+
+                    
+                </div>
+                <br><br>
+                
+                <div>
+                    <p ><button type="submit" style=" width: 100px; background-color: rgb(27, 16, 16); border-radius: 15px;">SIGN IN</button></p>
+                    
+                </div>  
+            </form>
+            <br><br>
+            <a href="https://aianesthesiologist.netlify.app/">SIGNUP</a>
+            
+        
+        </section>
+    </section>
+    
+</body>
+</html>

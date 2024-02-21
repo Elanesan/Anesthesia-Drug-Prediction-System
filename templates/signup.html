@@ -1,1 +1,70 @@
+{% load static %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" href="./symbol.png" type="image/x-icon">
+    <title>ANESTHESIA DRUG PREDICTION</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="heading">
+            <h1>ANESTHESIA DRUG PREDICTION DURING SURGERY</h1>
+            <br>
+            <h3>ARTIFICIAL INTELLIGENCE IN MEDICAL FIELD</h3>
+        </div>
+        <div class="logo">
+            <img src="{% static 'symbol.png' %}" alt="">
+        </div>
+        <div class="form">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <input type="text"  autocomplete="on" required placeholder="HOSPITAL NAME" name="hospital_name">
+                    <input type="text"  autocomplete="on" required placeholder="HOSPITAL ID" name="hospital_id">
+                </div>
+                <br>
+                <div class="row">
+                    
+                    
+                    <input type="text"  autocomplete="on" required placeholder="LICENSE ID" name="license_id">    
+                    <input type="email" autocomplete="on" required placeholder="Email-ID" name="email_id">
+                   
+                </div>
+               <br><br><br>
+                <div class="btn">
+                    <button type="submit" style="width: 100px; height:30px; background-color: rgb(85, 26, 26); color: aliceblue; font-size: large; border-radius: 10px;">SIGN UP</button>
+                    <button type="reset" style="width: 100px; height:30px; background-color: rgb(85, 26, 26); color: aliceblue; font-size: large; border-radius: 10px;">CLEAR</button>
+                </div>
+            </form>
+        </div>
+        <br>
+        <div class="out">
+            <h2 class="o1" ></h3>
+            <div class="res" id="res">
+                
+            </div>
+        </div>
+        <br>
+        <label id="cred"></label>
+        <div class="foot" >
+            <div class="std" >
+
+                <h4>ELANESAN K<br> Student</h4>
+                <h4>PRITHEEVE D<br> Student</h4>
+                <h4>DEO ALESTER S<br> Student</h4>
+                <h4>ARUN KUMAR S<br> Student</h4>
+                <h4>KAAVIYA R<br> Student</h4>
+            
+            </div>
+            <p class="f" >STUDENTS DEPARTMENT OF ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING-KRCE-TRICHY</p>
+        </div>
+    </div>
+
+</body>
+</html>
